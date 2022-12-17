@@ -3,7 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin=“anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+
+  <meta charset="UTF-8">
   <title>Insert title here</title>
   <style>
     img,label { display:inline-block;}
@@ -11,23 +18,35 @@
     button{ background-color:blue; color:white; font-size:15px}
   </style>
 </head>
-<body>
+
+<body class="text-center">
+
 <div style ='width:100%; text-align:center; padding-top:100px'>
-  <img src='${pageContext.request.contextPath}/resources/img/dog.png' height="250">
-  <br>
-  <b>동물 분양 센터로 이동 </b>
-  <br>
-  다음 페이지(list)랑 자연스럽게 연결되도록 디자인해주세용!
-  <br>
-  <form method="post" action="loginOk">
-    <div><label> User ID: </label>
-      <input type='text' name='userid'/>
-    </div>
-    <div><label>Password: </label>
-      <input type='password' name='password'/>
-    </div>
-    <button type='submit'>login</button>
-  </form>
+  <main class="form-signin w-100 m-auto">
+    <form method="post" action="loginOk">
+      <img src='${pageContext.request.contextPath}/resources/img/dog.png' height="250">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+      <div class="form-floating">
+        <input type='text' name='userid' class="form-control" id="floatingInput" />
+        <label for="floatingInput">ID</label>
+      </div>
+      <div class="form-floating">
+        <input type='password' name='password' class="form-control" id="floatingPassword" />
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">©실전프로젝트 과제5</p>
+    </form>
+
+
+  </main>
 </div>
 </body>
 </html>
